@@ -1,10 +1,11 @@
-// select the elements
+// Element selectors
 var css = document.querySelector("h3");
 var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
 // var btns = document.querySelectorAll("button");
-var btn = document.querySelector("button");
+var btnRand = document.getElementById("randBtn");
+const btnsTurn = document.querySelectorAll(".turnBgBtn");
 
 // display initial background value
 let bg = window.getComputedStyle(body).backgroundImage;
@@ -23,6 +24,9 @@ var rgb2 = bg.split('rgb')[2].match(/\d+/g);
 color1.value = rgbToHex(rgb1);
 color2.value = rgbToHex(rgb2);
 
+// define the gradient angle
+let bgAngle = 90;
+
 // generate a random color when button is pressed
 function randomizeColor() {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -37,25 +41,38 @@ function generateRandom() {
 }
 
 function setGradient() {
-    body.style.background = "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
+    body.style.background = "linear-gradient(" + bgAngle + "deg, " + color1.value + ", " + color2.value + ")";
     // set background of button
-    btn.style.background = "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
+    btnRand.style.background = "linear-gradient(" + bgAngle + "deg, " + color1.value + ", " + color2.value + ")";
     // set css text to display the current background
     css.textContent = body.style.background + ";";
 }
 
-// make 2 btns for random color
-// btns[0].addEventListener("click", function () {
+// make 2 btnRands for random color
+// btnRands[0].addEventListener("click", function () {
 //     color1.value = "#" + randomizeColor();
 //     setGradient();
 // })
-// btns[1].addEventListener("click", function () {
+// btnRands[1].addEventListener("click", function () {
 //     color2.value = "#" + randomizeColor();
 //     setGradient();
 // })
-// Make 1 btn for 2 random colors
 
-btn.addEventListener("click", generateRandom);
+// Make buttons for turning the gradient direction
+btnsTurn[0].addEventListener("click", () => {
+    bgAngle += 22.5;
+    bgAngle === 382.5 ? bgAngle = 22.5 : bgAngle;
+    setGradient();
+});
+
+btnsTurn[1].addEventListener("click", () => {
+    bgAngle -= 22.5;
+    bgAngle === -22.5 ? bgAngle = 337.5 : bgAngle;
+    setGradient();
+});
+
+// Make 1 btnRand for 2 random colors
+btnRand.addEventListener("click", generateRandom);
 
 color1.addEventListener("input", setGradient);
 
