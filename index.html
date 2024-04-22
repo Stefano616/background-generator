@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Background gradient generator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script1.js" defer></script>
+  </head>
 
-<body id="gradient">
-    <h1>Background generator</h1>
-    <input type="color" name="color1" value="#00ff00" class="color1">
-    <button id="randBtn">random</button>
-
-    <!-- <button>random</button> -->
-    <input type="color" name="color2" value="#ff0000" class="color2">
-
-    <!-- <button>random</button> -->
-    <button class="turnBgBtn">turn cw </button>
-    <button class="turnBgBtn">turn ccw</button>
-
-    <h2>Current CSS background</h2>
-
-
-    <h3></h3>
-    <script type="text/javascript" src="script1.js"></script>
-</body>
-
+  <body id="gradient">
+    <div class="container">
+      <h1>Background generator</h1>
+    </div>
+    <div class="container container--input">
+      <div class="container--input__color">
+        <input type="color" name="color1" value="#00ff00" class="color1" />
+        <button id="randBtn">random</button>
+        <input type="color" name="color2" value="#ff0000" class="color2" />
+      </div>
+      <button class="turnBgBtn">turn cw</button>
+      <button class="turnBgBtn">turn ccw</button>
+    </div>
+    <div class="container container--output">
+      <h2>Current CSS background</h2>
+      <h3></h3>
+    </div>
+  </body>
 </html>

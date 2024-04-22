@@ -1,50 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html {
-    height: 100%;
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  font: "Raleway", sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  /* text-align: center; */
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  background: linear-gradient(90deg, red, yellow);
+  /* background: -webkit-linear-gradient((90deg, red, yellow)); */
+  /* background-repeat: no-repeat; */
+  background-attachment: fixed;
+  /* Standard syntax */
+  /* overflow: hidden; */
 }
 
-body {
-    height: 100%;
-    font: 'Raleway', sans-serif;
-    color: rgba(0, 0, 0, .5);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .5em;
-    top: 15%;
-    background: linear-gradient(90deg, red, yellow);
-    /* Standard syntax */
-    overflow: hidden;
+.container {
+  width: 80%;
+  margin: 5em auto;
+  text-align: center;
+}
+
+.container--input {
+  width: 50%;
+  text-align: center;
+}
+
+.container--output {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.container--input__color {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em; */
+  margin-bottom: 2em;
+}
+
+input {
+  width: 20%;
+  max-width: 100px;
+  min-width: 50px;
 }
 
 h1 {
-    font: 600 3.5em 'Raleway', sans-serif;
-    color: rgba(0, 0, 0, .5);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .5em;
-    width: 100%;
-}
-
-h3 {
-    font: 900 1em 'Raleway', sans-serif;
-    color: rgba(0, 0, 0, .5);
-    text-align: center;
-    text-transform: none;
-    letter-spacing: 0.01em;
+  font: 600 3.5em "Raleway", sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
 }
 
 button {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
-    color: rgba(0, 0, 0, .5);
-    background: linear-gradient(90deg, red, yellow);
-    border-radius: 10px;
-    border: 1.5px solid rgba(0, 0, 0, 1);
-
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 0.5em 1.5em;
+  color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(90deg, red, yellow);
+  border-radius: 25px;
+  border: 1.5px solid rgba(0, 0, 0, 1);
 }
 
 .turnBgBtn {
-    background: rgba(195, 195, 195, 0.1);
-    display: block;
-    margin: 5px auto;
-    padding: 0% 5%;
+  background: rgba(195, 195, 195, 0.1);
+}
+h3 {
+  font: 900 1em "Raleway", sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  button {
+    font-size: 1.125rem;
+  }
+  .container--output {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .container--input__color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+  }
+  .turnBgBtn {
+    margin-bottom: 1em;
+  }
 }
